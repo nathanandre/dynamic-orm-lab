@@ -14,6 +14,7 @@ class InteractiveRecord
         column_names = []
         table_info.each do |column|
             column_names << column["name"]
+            self.class.column_names.delete_if {|column| colimn == "id"}
         end 
         column_names.compact 
     end 
